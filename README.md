@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/sprites.png" width="420" alt="Every claudepix creature — idle, expressions, dance, and work — rendered to a contact sheet.">
+  <img src="docs/claudepix.gif" width="760" alt="Five claudepix creatures animating live — idle breathe, wink, coding at a laptop, bouncing, and a DJ at a mixer.">
 </p>
 
 <h1 align="center">claudepix</h1>
@@ -98,6 +98,12 @@ through `sprite::ALL`.
 | **Expression** | `EXPRESSION_WINK`, `EXPRESSION_SURPRISE`, `EXPRESSION_SLEEP` |
 | **Dance** | `DANCE_BOUNCE`, `DANCE_SWAY`, `DANCE_BOUNCE_DJ`, `DANCE_SWAY_DJ`, `DANCE_DJMIX` |
 | **Work** | `WORK_CODING`, `WORK_THINK` |
+
+<p align="center">
+  <img src="docs/sprites.png" width="360" alt="All 13 presets rendered to a contact sheet — six frames sampled across each animation's loop.">
+  <br>
+  <sub>All 13 presets — six frames sampled across each loop, straight from <code>cargo run --example sprites</code>.</sub>
+</p>
 
 ---
 
