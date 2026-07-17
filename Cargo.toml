@@ -1,0 +1,30 @@
+[package]
+name = "claudepix"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+description = "A no_std, alloc-free renderer and on-device format for the ClaudePix 20×20 creature animations, drawn into any embedded-graphics DrawTarget."
+repository = "https://github.com/igouss/claudepix-rs"
+readme = "README.md"
+keywords = ["embedded", "no-std", "sprite", "animation", "embedded-graphics"]
+categories = ["embedded", "no-std", "graphics"]
+
+[lib]
+name = "claudepix"
+path = "src/lib.rs"
+
+[features]
+# Exposes `testing::Framebuffer` — a pixel-counting host DrawTarget — to dependent
+# crates' tests. Off by default, so it never reaches a firmware build.
+testing = []
+
+[dependencies]
+# The graphics port: `DrawTarget` is the seam every sprite is painted through, so the
+# same code drives an on-target panel and a host framebuffer.
+embedded-graphics = "0.8"
+
+# Host-only; never reaches a no_std target (a dependent excludes dev-deps).
+[dev-dependencies]
+# A host framebuffer that saves a PNG — used by the `sprites` contact-sheet example.
+# `default-features = false` drops the SDL window backend: we rasterize to a file.
+embedded-graphics-simulator = { version = "0.8", default-features = false }
